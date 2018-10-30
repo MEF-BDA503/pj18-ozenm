@@ -1,10 +1,9 @@
 ---
 title: "Assignment1"
-author: "Merve ÷zen ﬁahin"
+author: "Merve √ñzen √ûahin"
 date: "16 Ekim 2018"
 output: html_document
 ---
-
 
 ## Assignment: Find Three R Examples about My Work
 I am working at Central Bank of Republic of Turkey as a Data Architect.
@@ -24,11 +23,11 @@ It is used by a large number of data scientists so it's not going away anytime s
 + [Link2](https://www.datacamp.com/community/blog/an-introduction-to-cleaning-data-in-r)
 
 ## Example 2: R for Predicting Value of Transactions (Banking)
-The aim of this challenge is to predict the ìvalue of transactions for each potential customerî based on customer data provided by the Santander Bank. More specifically, the bank wants us to predict the ìvalue of the customerís transactionî before it occurs. The goal is to provide tailored financial service based on this prediction. This is the 3rd time that the Santander Group is requesting the help of the Kaggle community.
+The aim of this challenge is to predict the ‚Äúvalue of transactions for each potential customer‚Äù based on customer data provided by the Santander Bank. More specifically, the bank wants us to predict the ‚Äúvalue of the customer‚Äôs transaction‚Äù before it occurs. The goal is to provide tailored financial service based on this prediction. This is the 3rd time that the Santander Group is requesting the help of the Kaggle community.
 
 + [Link](https://www.kaggle.com/headsortails/breaking-bank-santander-eda)
 
 ## Example 3: R for Recommendation Engine
-How do we make recommendations in our lives ? We do it based on our past experiences. Now imagine, what if we start making instant recommendations based on data in our real lives? First, weíll feel like an intelligent adviser. Second, we will no longer be humans. Therefore, we aim to build intelligent softwares, which are capable of providing cogent recommendations.
+How do we make recommendations in our lives ? We do it based on our past experiences. Now imagine, what if we start making instant recommendations based on data in our real lives? First, we‚Äôll feel like an intelligent adviser. Second, we will no longer be humans. Therefore, we aim to build intelligent softwares, which are capable of providing cogent recommendations.
 + [Link1](https://www.analyticsvidhya.com/blog/2016/03/exploring-building-banks-recommendation-system/)
 + [Link2](https://www.youtube.com/watch?v=R6jaYdBNHFc)
