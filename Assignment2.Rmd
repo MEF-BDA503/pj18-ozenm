@@ -1,0 +1,73 @@
+---
+title: "Assignment 2"
+author: "Merve Ozen Sahin"
+date: "30 Ekim 2018"
+output: html_document
+---
+
+Install and load the readxl & tidyverse packages
+```{r,warning=FALSE}
+#install.packages("readxl")
+#install.packages("tidyverse")
+```
+
+```{r, warning=FALSE}
+library(readxl)
+library(tidyverse)
+```
+
+#### Prepare Data
+
+```{r, warning=FALSE}
+tmp<-tempfile(fileext=".xlsx")
+```
+
+```{r, warning=FALSE}
+download.file("https://github.com/MEF-BDA503/pj18-ozenm/blob/master/odd_otomobil_satislar_201607.xlsx?raw=true",mode = 'wb',destfile=tmp)
+```
+
+```{r, warning=FALSE}
+odd_201607<-readxl::read_excel(tmp,skip=7,col_names=FALSE)
+```
+
+```{r, warning=FALSE}
+file.remove(tmp)
+```
+
+```{r, warning=FALSE}
+View(odd_201607)
+head(odd_201607)
+tail(odd_201607)
+```
+
+
+```{r, warning=FALSE}
+odd_201607 <- odd_201607 %>% slice(-c(49,50))
+
+#colnames(odd_201607) <- c("brand_name","domstc_auto_cnt","imprt_auto_cnt","total_auto_cnt","domstc_comm_vehcl_cnt","imprt_comm_vehcl_cnt","total_comm_vehcl_cnt","domstc_total_cnt","imprt_total_cnt","total_cnt")
+
+
+colnames(odd_201607) <- c("brand_name","auto_dom","auto_imp","auto_total","comm_dom","comm_imp","comm_total","total_dom","total_imp","total_total")
+
+car_data_jul_16  <- odd_201607 %>% mutate_if(is.numeric,funs(ifelse(is.na(.),0,.))) %>% mutate(year=2016,month=7)
+
+print(car_data_jul_16,width=Inf)
+```
+
+```{r, warning=FALSE}
+saveRDS(car_data_jul_16,file="odd_car_sales_data_jul_16.rds")
+```
+
+```{r, warning=FALSE}
+car_data_jul_16 %>% 
+  select(brand_name,auto_dom) %>% 
+  arrange(desc(auto_dom)) %>% 
+  filter(auto_dom>0)
+```
+
+```{r, warning=FALSE}
+car_data_jul_16 %>% 
+  filter(auto_total > 0 | comm_total > 0) %>%
+  select(brand_name,auto_total,comm_total,total_total) %>%
+  arrange(desc(total_total))
+```
